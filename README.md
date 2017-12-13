@@ -1,5 +1,24 @@
 # W205 Project : Sentiment Analysis on Yelp Dataset
 
+### Environment Setup
+* Launch EC2
+* Mount EBS
+'''
+mount -t ext4 /dev/XXX /data
+'''
+* Start Hadoop
+'''
+/root/start-hadoop.sh
+'''
+* Start Postgres
+'''
+/data/start_postgres.sh
+'''
+* Switch User
+'''
+su - w205
+'''
+
 ### Loading and Modelling
 
 #### Get the Yelp Dataset
