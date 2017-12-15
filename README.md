@@ -8,6 +8,9 @@
 
 ---
 ### Environment Setup
+* Create an EC2
+- AMI Name: UCB MIDS W205 EX2-FULL
+- AMI ID: ami-d4dd4ec3
 * Launch EC2
 * Mount EBS
 ```
