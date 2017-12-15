@@ -29,6 +29,8 @@ wget https://s3.amazonaws.com/jelyee/yelp_dataset.tar
 ```
 
 #### Convert json to csv using json_to_csv_converter.py
+json_to_csv_converter.py loacted under folder /loading and modeling
+
 ```
 python json_to_csv_converter.py business.json
 python json_to_csv_converter.py checkin.json
@@ -47,7 +49,7 @@ Run SQL script 'word_score.sql' under folder /aggregation
 
 
 ---
-### Run sample scripts to verify data
+### Run sample sql to verify data processing
 SELECT word, average_stars, count FROM review_words WHERE count > 100 ORDER BY aerage_stars DESC LIMIT 50;
 
 ![Top Positive Words](https://github.com/jey-lee/W205_project/blob/master/screenshot/screenshot-top_positive_words.png "Top Positive Words")
