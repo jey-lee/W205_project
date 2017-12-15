@@ -1,5 +1,12 @@
 # W205 Project : Sentiment Analysis on Yelp Dataset
 
+### Project Directory Structure
+* aggregation : SQL file for data processing
+* app : Apache Storm App - Tweet Monitor
+* loading and modelling	: sctiops for database setup
+* screenshot : Screenshots for key use-case
+
+---
 ### Environment Setup
 * Launch EC2
 * Mount EBS
