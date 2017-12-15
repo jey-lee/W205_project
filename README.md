@@ -77,6 +77,13 @@ FROM '/data/yelp_dataset/review_words_avg/review_words_avg.csv' DELIMITER ',' CS
 
 
 ---
+### Run Sentiment classifier on words
+```
+python sentiment_classifier.py amazing
+```
+![Sentiment Classifier](https://github.com/jey-lee/W205_project/blob/master/screenshot/screenshot-sentiment_classifier.png "Sentiment classifier")
+
+---
 ### Run Apache Storm - Tweet Monitor
 Apache Storm Tweet Monitor App set up under folder app/tweetmonitor
 Use below command under app/tweetmonitor to run
