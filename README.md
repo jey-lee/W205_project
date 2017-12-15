@@ -19,6 +19,8 @@ mount -t ext4 /dev/XXX /data
 su - w205
 ```
 
+
+---
 ### Loading and Modelling
 
 #### Get the Yelp Dataset
@@ -38,9 +40,20 @@ python json_to_csv_converter.py user.json
 #### Move csv files to HDFS and create tables using Hive
 Run create table scrips under folder /loading and modeling
 
-### Data Processing
-Run SQL script under folder /aggregation
 
+---
+### Data Processing
+Run SQL script 'word_score.sql' under folder /aggregation
+
+
+---
+### Run sample scripts to verify data
+SELECT word, average_stars, count FROM review_words WHERE count > 100 ORDER BY aerage_stars DESC LIMIT 50;
+
+![Top Positive Words](https://github.com/jey-lee/W205_project/blob/master/screenshot/screenshot-top_positive_words.png "Top Positive Words")
+
+
+---
 ### Export Table to CSV, import to Postgres
 #### Export table from Hive to CSV
 ```
@@ -60,6 +73,8 @@ COPY
 FROM '/data/yelp_dataset/review_words_avg/review_words_avg.csv' DELIMITER ',' CSV HEADER;
 ```
 
+
+---
 ### Run Apache Storm - Tweet Monitor
 Apache Storm Tweet Monitor App set up under folder app/tweetmonitor
 Use below command under app/tweetmonitor to run
