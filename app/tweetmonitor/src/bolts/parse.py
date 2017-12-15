@@ -26,7 +26,7 @@ class ParseTweet(Bolt):
         # Filter out the hash tags, RT, @ and urls
         valid_words = []
         for word in words:
-            self.log('%s ' % word)
+            self.log('%s ',word)
 
             # Filter the hash tags
             if word.startswith("#"): continue
@@ -70,6 +70,6 @@ class ParseTweet(Bolt):
         self.log('%s : %f' % (tweet.encode("utf-8"), tweet_score))
 
         # Emit all the words
-        self.emit_many(valid_words)
+        self.emit_many(tweet, tweet_score)
 
         # tuple acknowledgement is handled automatically

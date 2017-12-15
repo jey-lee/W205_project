@@ -15,19 +15,17 @@ class WordCounter(Bolt):
 
 
     def process(self, tup):
-        word = tup.values[0]
-
+        tweet = tup.values[0]
+        score = tup.values[1]
         # Increment the local count
-        self.counts[word] += 1
-        self.emit([word, self.counts[word]])
+        self.counts[tweet] += 1
+        self.emit([tweet,score])
 
         # Log the count - just to see the topology running
         #self.log('%s: %d' % (word, self.counts[word]))
 
         cur = self.conn.cursor()
-        cur.execute("UPDATE tweetwordcount SET count = count+1 WHERE word=%s", (word,))
-        if cur.rowcount == 0:
-            cur.execute("INSERT INTO tweetwordcount (word,count) VALUES (%s, 1)", (word,))
+        cur.execute("INSERT INTO tweetmonitor (tweet,score) VALUES (%s, %s)", (tweet,score))
 
         self.conn.commit()
 
